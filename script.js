@@ -10,9 +10,9 @@ async function apiImageLink(apiKey, query, page) {
 async function loadMoreImages() {
     const imageContainer = document.getElementById('imageContainer');
     const imageUrls = await apiImageLink(apiKey, 'nature', page);
-    imageUrls.forEach(url => {
+    imageUrls.forEach(response => {
         const img = document.createElement('img');
-        img.src = url;
+        img.src = response;
         imageContainer.appendChild(img);
     });
     page++
